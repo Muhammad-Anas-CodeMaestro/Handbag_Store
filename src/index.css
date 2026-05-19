@@ -2,10 +2,23 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@300;400;500&display=swap');
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@theme {
+  --color-earth-50: #faf7f2;
+  --color-earth-100: #f2ebe0;
+  --color-earth-200: #e5d5bc;
+  --color-earth-300: #d4b896;
+  --color-earth-400: #c49a6c;
+  --color-earth-500: #b07d4f;
+  --color-earth-600: #916339;
+  --color-earth-700: #734d2c;
+  --color-earth-800: #5a3c22;
+  --color-earth-900: #3d2810;
+  --color-bark: #2c1f0e;
+  --color-cream: #faf7f2;
 
+  --font-serif: "Playfair Display", Georgia, serif;
+  --font-sans: "DM Sans", system-ui, sans-serif;
+}
 
 * { box-sizing: border-box; }
 

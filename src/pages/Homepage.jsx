@@ -25,18 +25,18 @@ export default function HomePage() {
             </p>
             <div className="flex flex-wrap gap-4">
               <Link to="/shop" className="btn-primary">Shop the Collection</Link>
-              <Link to="/shop" className="btn-outline">Our Story</Link>
+              <Link to="/about" className="btn-outline">Our Story</Link>
             </div>
           </div>
           <div className="relative">
             <img
               src="https://images.unsplash.com/photo-1548036328-c9fa89d128fa?w=800&q=80"
-              alt="The Harvest Tote — hero"
+              alt="The Harvest Tote - hero"
               className="w-full aspect-square object-cover rounded"
             />
             <div className="absolute -bottom-4 -left-4 bg-cream border border-earth-200 px-5 py-3 shadow-sm">
               <p className="font-serif text-bark text-sm">The Harvest Tote</p>
-              <p className="font-sans text-earth-500 text-xs">Full-grain leather · $149</p>
+              <p className="font-sans text-earth-500 text-xs">Full-grain leather - $149</p>
             </div>
           </div>
         </div>
@@ -46,15 +46,58 @@ export default function HomePage() {
       <section className="border-y border-earth-200 bg-cream">
         <div className="max-w-6xl mx-auto px-4 py-5 grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
           {[
-            { icon: '✦', label: 'Handmade' },
-            { icon: '✦', label: 'Vegetable-tanned leather' },
-            { icon: '✦', label: 'Free shipping over $120' },
-            { icon: '✦', label: '30-day returns' },
+            { icon: '*', label: 'Handmade' },
+            { icon: '*', label: 'Vegetable-tanned leather' },
+            { icon: '*', label: 'Free shipping over $120' },
+            { icon: '*', label: '30-day returns' },
           ].map(({ icon, label }) => (
             <p key={label} className="font-sans text-xs text-earth-500 tracking-widest uppercase">
               <span className="text-earth-400 mr-2">{icon}</span>{label}
             </p>
           ))}
+        </div>
+      </section>
+
+      {/* About Maison Terre */}
+      <section className="max-w-6xl mx-auto px-4 py-20">
+        <div className="grid md:grid-cols-2 gap-12 lg:gap-20 items-center">
+
+          {/* Image */}
+          <div className="relative order-2 md:order-1">
+            <img
+              src="https://images.unsplash.com/photo-1452860606245-08befc0ff44b?w=800&q=80"
+              alt="Artisan hand-stitching a leather bag in the Maison Terre studio"
+              className="w-full aspect-[4/3] object-cover rounded"
+            />
+            <div className="absolute -bottom-4 -right-4 bg-earth-800 text-cream px-5 py-3 hidden md:block">
+              <p className="font-serif italic text-sm text-earth-300">Est. 2019</p>
+            </div>
+          </div>
+
+          {/* Text */}
+          <div className="order-1 md:order-2">
+            <p className="text-xs tracking-widest uppercase text-earth-400 font-sans mb-3">
+              Our story
+            </p>
+            <h2 className="section-title text-4xl mb-6">
+              Made by hand,<br />kept for life.
+            </h2>
+            <p className="font-sans text-earth-600 leading-relaxed mb-4">
+              Maison Terre began in a small workshop with a single belief: that the
+              things we carry every day should be made to outlast trends, seasons,
+              and years of use. Every bag leaves our studio stitched by one pair
+              of hands, from start to finish.
+            </p>
+            <p className="font-sans text-earth-600 leading-relaxed mb-8">
+              We source full-grain leather from tanneries that still use
+              vegetable-tanning — a slower, cleaner process that gives our bags
+              their character and improves with age.
+            </p>
+            <Link to="/about" className="btn-outline">
+              Read our full story
+            </Link>
+          </div>
+
         </div>
       </section>
 
@@ -71,7 +114,7 @@ export default function HomePage() {
             to="/shop"
             className="text-sm font-sans tracking-widest uppercase text-earth-500 hover:text-bark transition-colors hidden md:block"
           >
-            View all →
+            View all {'->'}
           </Link>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
@@ -105,10 +148,10 @@ export default function HomePage() {
         <h2 className="section-title mb-10">Shop by category</h2>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
           {[
-            { label: 'Totes', slug: 'totes',     img: 'https://images.unsplash.com/photo-1566150905458-1bf1fc113f0d?w=400&q=70' },
+            { label: 'Totes', slug: 'totes', img: 'https://images.unsplash.com/photo-1566150905458-1bf1fc113f0d?w=400&q=70' },
             { label: 'Crossbody', slug: 'crossbody', img: 'https://images.unsplash.com/photo-1584917865442-de89df76afd3?w=400&q=70' },
             { label: 'Backpacks', slug: 'backpacks', img: 'https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=400&q=70' },
-            { label: 'Clutches', slug: 'clutches',  img: 'https://images.unsplash.com/photo-1594938298603-c8148c4dae35?w=400&q=70' },
+            { label: 'Clutches', slug: 'clutches', img: 'https://images.unsplash.com/photo-1594938298603-c8148c4dae35?w=400&q=70' },
           ].map(({ label, slug, img }) => (
             <Link
               key={slug}
