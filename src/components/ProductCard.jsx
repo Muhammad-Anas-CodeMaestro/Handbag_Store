@@ -1,11 +1,13 @@
 import { Link } from 'react-router-dom';
 import { useCartStore } from '../store/cartStore';
+import { useScrollReveal } from '../hooks/useScrollReveal';
 
 export default function ProductCard({ product }) {
   const addItem = useCartStore(s => s.addItem);
-
+  const ref = useScrollReveal({ threshold: 0.1 });
+  
   return (
-    <article className="group bg-white border border-earth-100 rounded overflow-hidden hover:shadow-md transition-shadow duration-300">
+    <article className="group bg-white border border-earth-100 rounded overflow-hidden hover:shadow-md transition-shadow duration-300 reveal-item" ref={ref}>
       <Link to={`/shop/${product.slug}`} className="block overflow-hidden">
         <img
           src={product.image}

@@ -1,10 +1,15 @@
 import { Link } from 'react-router-dom';
 import { products } from '../data/products';
 import ProductCard from '../components/ProductCard';
+import { useScrollReveal } from '../hooks/useScrollReveal';
 
 const featured = products.slice(0, 3);
 
 export default function HomePage() {
+  const headingRef = useScrollReveal({ threshold: 0.2 });
+  const subRef = useScrollReveal({ threshold: 0.2 });
+  const ctaRef = useScrollReveal({ threshold: 0.2 });
+
   return (
     <div>
 
@@ -15,15 +20,18 @@ export default function HomePage() {
             <p className="text-xs tracking-widest uppercase text-earth-500 font-sans mb-4">
               Handmade in small batches
             </p>
-            <h1 className="font-serif text-5xl md:text-6xl text-bark leading-tight mb-6">
+            <h1
+              ref={headingRef}
+              className="font-serif text-5xl md:text-6xl text-bark leading-tight mb-6"
+            >
               Bags that age<br />
               <em>beautifully.</em>
             </h1>
-            <p className="font-sans text-earth-600 text-lg leading-relaxed mb-8 max-w-md">
+            <p className="font-sans text-earth-600 text-lg leading-relaxed mb-8 max-w-md" ref={subRef}>
               Each piece is cut, stitched, and finished by hand using
               full-grain leather and natural materials. Made to last a lifetime.
             </p>
-            <div className="flex flex-wrap gap-4">
+            <div className="flex flex-wrap gap-4" ref={ctaRef}>
               <Link to="/shop" className="btn-primary">Shop the Collection</Link>
               <Link to="/about" className="btn-outline">Our Story</Link>
             </div>

@@ -51,3 +51,38 @@ body {
     color: #2c1f0e;
   }
 }
+
+/* === Scroll reveal system === */
+
+/* 1. Starting state — invisible & shifted */
+.reveal-item {
+  opacity: 0;
+  transform: translateY(28px);
+  /* Use transition not animation — cheaper, no FOUC */
+  transition:
+    opacity 0.55s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.55s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* 2. Revealed state — JS adds this class */
+.reveal-item.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* 3. Stagger delays (apply to children in a grid) */
+.reveal-item:nth-child(1) { transition-delay: 0s; }
+.reveal-item:nth-child(2) { transition-delay: 0.08s; }
+.reveal-item:nth-child(3) { transition-delay: 0.16s; }
+.reveal-item:nth-child(4) { transition-delay: 0.24s; }
+.reveal-item:nth-child(5) { transition-delay: 0.32s; }
+.reveal-item:nth-child(6) { transition-delay: 0.40s; }
+
+/* 4. Accessibility — kills animation for reduced-motion users */
+@media (prefers-reduced-motion: reduce) {
+  .reveal-item {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
